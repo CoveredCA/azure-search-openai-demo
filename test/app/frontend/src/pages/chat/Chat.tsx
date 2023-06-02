@@ -134,22 +134,9 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <svg width="102" height="95" viewBox="0 0 102 95" fill="none" xmlns="http://www.w3.org/2000/svg">
-                               <g clip-path="url(#clip0_1_115)">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M33.9309 20.041C48.0337 20.041 60.62 27.8615 65.2875 39.4394C75.7412 65.372 55.6033 84.2992 35.916 94.9989V83.1087C35.258 83.1436 34.5967 83.1628 33.9298 83.1628C15.1911 83.1639 0 69.0336 0 51.6036C0 34.1735 15.1911 20.041 33.9309 20.041Z" fill="#17B8CA"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M68.0691 74.9579C53.9663 74.9579 41.38 67.1385 36.7125 55.5595C26.2576 29.628 46.3967 10.6997 66.084 0V11.8902C66.742 11.8553 67.4033 11.8361 68.0702 11.8361C86.8089 11.8361 102.001 25.9664 102.001 43.3964C102.001 60.8265 86.8101 74.959 68.0702 74.959L68.0691 74.9579Z" fill="#FFCB56"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0341 20.714C52.1255 22.8402 61.4222 29.8512 65.2875 39.4394C70.7707 53.0421 67.8348 64.7147 60.9637 74.2848C49.8734 72.1586 40.5767 65.1476 36.7102 55.5583C31.2271 41.9568 34.163 30.283 41.033 20.7129L41.0341 20.714Z" fill="#4F63F6"/>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1_115">
-                                    <rect width="102" height="95" fill="white"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                            {/* <SparkleFilled fontSize={"120px"} primaryFill={"rgba(115, 118, 225, 1)"} aria-hidden="true" aria-label="Chat logo" /> */}
-                            <h1 className={styles.chatEmptyStateTitle}>Let's Chat!</h1>
-                            <h2 className={styles.chatEmptyStateSubtitle}>Ask any question about Covered California. Or, you try an example below.</h2>
+                            <SparkleFilled fontSize={"120px"} primaryFill={"rgba(115, 118, 225, 1)"} aria-hidden="true" aria-label="Chat logo" />
+                            <h1 className={styles.chatEmptyStateTitle}>Chat with your data</h1>
+                            <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example</h2>
                             <ExampleList onExampleClicked={onExampleClicked} />
                         </div>
                     ) : (
@@ -194,7 +181,7 @@ const Chat = () => {
                     <div className={styles.chatInput}>
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. Tell me about the Information Technology Division?)"
+                            placeholder="Type a new question (e.g. does my plan cover annual eye exams?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question)}
                         />
